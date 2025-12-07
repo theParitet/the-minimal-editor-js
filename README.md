@@ -1,5 +1,9 @@
 # The Minimal Editor
 
+<p align="center">
+    <img  src="https://raw.githubusercontent.com/theParitet/the-minimal-editor/e5d81fede90374389b33e57d884e00a81572610e/public/logo2.svg" width="100" alt="the minimal editor logo" />
+</p>
+
 The Minimal Editor is a web plain text editor.
 
 ## Tech
