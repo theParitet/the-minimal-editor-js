@@ -1,11 +1,11 @@
 :root {
-    --top-bar-padding: .2rem;
+    --top-bar-padding: 0.2rem;
     /* --manager-width: 1500px; */
     --manager-width: 1200px;
     /* --editor-padding-inline: 2rem; */
     --editor-padding-inline: 1.5rem;
 
-    --color--accent--main: #94e3df; 
+    --color--accent--main: #94e3df;
     --color--accent--secondary: #b0e0e6;
     --color--success--1: rgb(75, 235, 99);
     /* --color--warning: rgb(235, 150, 75);
@@ -15,7 +15,7 @@
     --color--danger: #eb4b4b;
 
     --color--accent--main--1: #ffbe91;
-}    
+}
 
 @font-face {
     font-family: Rubik;
@@ -33,7 +33,7 @@ button {
     /* outline: .1px solid paleturquoise; */
 }
 *:focus-visible {
-    outline: 2px solid hsl(187, 52%, 80%, .5);
+    outline: 2px solid hsl(187, 52%, 80%, 0.5);
 }
 
 body {
@@ -56,9 +56,9 @@ a {
 
     /* padding: .25rem .5rem; */
     /* padding: .25rem .25rem; */
-    padding: .1rem .1rem;
+    padding: 0.1rem 0.1rem;
     border: none;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
 }
 a:focus,
 a:hover {
@@ -72,10 +72,9 @@ strong {
     color: var(--color--accent--main);
 }
 
-
 .header {
     margin: 0;
-    padding: .3rem;
+    padding: 0.3rem;
     font-size: 1rem;
 
     /* max-width: min(100vw, var(--manager-width));
@@ -88,7 +87,7 @@ strong {
 }
 .header__hero {
     font-size: 1rem;
-    margin: 0
+    margin: 0;
 }
 .header__hero--highlight {
     color: var(--color--accent--main);
@@ -98,9 +97,9 @@ strong {
     color: var(--color--accent--main);
     text-decoration: underline;
 
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
 }
 .header__btn:focus,
 .header__btn:hover {
@@ -117,7 +116,7 @@ strong {
     width: 100vw;
     height: 100vh;
     background-color: #111111dd;
-    backdrop-filter: blur(.3rem);
+    backdrop-filter: blur(0.3rem);
 
     display: flex;
     justify-content: center;
@@ -130,23 +129,23 @@ strong {
     max-height: 400px;
 
     background-color: #242424;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
     display: flex;
 
-    padding: .3rem;
+    padding: 0.3rem;
 }
 
 .modal__options {
     display: flex;
     flex-direction: column;
-    gap: .3rem;
-    padding: .3rem;
+    gap: 0.3rem;
+    padding: 0.3rem;
 }
 .modal__options__option {
     /* text-align: start; */
     background-color: transparent;
-    padding: .5rem 1rem;
-    border-radius: .3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
 }
 .modal__options__option.active {
     background-color: #b0e0e633;
@@ -163,34 +162,36 @@ strong {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    
-    padding: .3rem;
+
+    padding: 0.3rem;
     overflow-y: auto;
     overflow-x: hidden;
 
     width: 100%;
 }
 .modal__content h1 {
-    margin: .25em 0;
+    margin: 0.25em 0;
     font-size: 1.5rem;
     text-align: center;
 }
 .modal__content h2 {
-    margin: .25em 0;
+    margin: 0.25em 0;
     font-size: 1.25rem;
 }
 .modal__content h3 {
-    margin: .25em 0;
+    margin: 0.25em 0;
     font-size: 1rem;
 }
 .modal__content p {
-    margin: .25em 0;
+    margin: 0.25em 0;
     line-height: 1.5rem;
     text-align: justify;
 }
 
 .btn-inset {
-    box-shadow: 0 0 .2rem #eeeeee44, inset 0 0 .2rem black;
+    box-shadow:
+        0 0 0.2rem #eeeeee44,
+        inset 0 0 0.2rem black;
 }
 .settings__options {
     display: flex;
@@ -199,14 +200,14 @@ strong {
     align-items: center;
 }
 .settings__options input {
-    margin: .375rem;
+    margin: 0.375rem;
     width: 1.25rem;
     height: 1.25rem;
 }
 .settings__options.grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 .settings__options.grid input {
     margin: 0;
@@ -220,7 +221,6 @@ strong {
     justify-self: center;
     align-items: center;
 }
-
 
 #manager {
     scrollbar-color: #b0e0e699 transparent;
@@ -236,10 +236,14 @@ strong {
 
 #manager.inset {
     .btn-zen {
-        box-shadow: 0 0 .2rem #444, inset 0 0 .2rem black;
+        box-shadow:
+            0 0 0.2rem #444,
+            inset 0 0 0.2rem black;
     }
     .btn-img {
-        box-shadow: 0 0 .2rem #eeeeee44, inset 0 0 .2rem black;
+        box-shadow:
+            0 0 0.2rem #eeeeee44,
+            inset 0 0 0.2rem black;
     }
     .btn-img.arrow {
         box-shadow: none;
@@ -256,7 +260,7 @@ strong {
     #editor__title {
         /* height: 1rem; */
         text-align: center;
-        padding: .75rem 3rem;
+        padding: 0.75rem 3rem;
         font-size: 1rem;
         font-weight: normal;
         color: #999;
@@ -277,7 +281,7 @@ strong {
 
     cursor: pointer;
 
-    --dimension: calc(.75rem * 2 + 1rem + 1.5px *2);
+    --dimension: calc(0.75rem * 2 + 1rem + 1.5px * 2);
     height: var(--dimension);
     width: var(--dimension);
 
@@ -287,7 +291,6 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .btn-zen:focus,
@@ -298,11 +301,9 @@ strong {
     background-color: #b0e0e655;
 }
 
-
 body:has(#manager.zen) .header {
     display: none;
 }
-
 
 /* TODO: Check size issues in SAFARI for this element */
 .manager__editor {
@@ -356,7 +357,6 @@ body:has(#manager.zen) .header {
 }
 
 #editor__main {
-
     width: 100%;
     height: 100%;
 
@@ -375,8 +375,6 @@ body:has(#manager.zen) .header {
     /* gap: .2rem; */
 }
 
-
-
 .manager__panel {
     min-width: min(25%, 250px);
     max-width: min(25%, 250px);
@@ -386,7 +384,6 @@ body:has(#manager.zen) .header {
     flex-direction: column;
 }
 
-
 .panel__controls {
     display: flex;
 
@@ -395,7 +392,7 @@ body:has(#manager.zen) .header {
 
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - .5rem);
+    width: calc(100% - 0.5rem);
 
     padding: var(--top-bar-padding);
 
@@ -408,12 +405,12 @@ body:has(#manager.zen) .header {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: .2rem;
+    gap: 0.2rem;
 }
 
 .panel__files {
     width: 100%;
-    padding: .5rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     /* gap: .2rem; */
@@ -441,9 +438,7 @@ body:has(#manager.zen) .header {
     justify-content: space-between;
     padding: 0 var(--record-padding);
 
-
-
-    --border-radius: calc(.3rem + var(--record-padding)/4);
+    --border-radius: calc(0.3rem + var(--record-padding)/4);
     /* PINNED */
     /* --border-radius: var(--record-padding); */
 
@@ -499,8 +494,8 @@ body:has(.record:hover) .record:hover > .record__trash {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    height: calc(100% - var(--record-padding)*2);
+
+    height: calc(100% - var(--record-padding) * 2);
     aspect-ratio: 1;
 }
 
@@ -517,7 +512,7 @@ body:has(.record:hover) .record:hover > .record__trash {
     text-wrap: nowrap;
     text-overflow: ellipsis;
 
-    font-size: calc(.7rem + var(--record-padding)/1.5);
+    font-size: calc(0.7rem + var(--record-padding) / 1.5);
     margin: 0;
 }
 .empty.record__title {
@@ -534,12 +529,10 @@ body:has(.record:hover) .record:hover > .record__trash {
     height: var(--dimension);
     width: var(--dimension);
 
-
     background-color: transparent;
-    padding: .25rem;
+    padding: 0.25rem;
     border: none;
-    border-radius: .3rem;
-
+    border-radius: 0.3rem;
 }
 
 .btn-img--default:focus,
@@ -548,24 +541,24 @@ body:has(.record:hover) .record:hover > .record__trash {
 }
 .btn-img--default:active {
     background-color: #eeeeee44;
-} 
+}
 .btn-img--danger:focus,
 .btn-img--danger:hover {
     background-color: #ff111155;
 }
 .btn-img--danger:active {
     background-color: #ff1111a1;
-} 
+}
 
 .btn {
-    font-size: .75rem;
+    font-size: 0.75rem;
     cursor: pointer;
 
     background-color: transparent;
     margin: 0;
-    padding: .3rem;
+    padding: 0.3rem;
     border: none;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
 
     color: #eee;
 }
@@ -576,10 +569,9 @@ body:has(.record:hover) .record:hover > .record__trash {
 }
 .btn--default:active {
     background-color: #eeeeee44;
-} 
+}
 
-
-input[type="file"] {
+input[type='file'] {
     /* visibility: hidden;
     display: inline;
     width: 1px;
@@ -592,15 +584,13 @@ input[type="file"] {
     /* visibility: hidden; */
     /* display: none; */
 }
-body:has(#file-reader:focus-visible) label[for="file-reader"] {
+body:has(#file-reader:focus-visible) label[for='file-reader'] {
     background-color: #eeeeee22;
-    outline: 2px solid hsl(187, 52%, 80%, .5);
+    outline: 2px solid hsl(187, 52%, 80%, 0.5);
 }
 
-
-
 .statuses-container {
-    animation: roll-in-left 300ms cubic-bezier(0,0,0,1) 1 forwards;
+    animation: roll-in-left 300ms cubic-bezier(0, 0, 0, 1) 1 forwards;
 
     width: 100%;
     /* min-height: 0; */
@@ -617,14 +607,14 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: 0.4rem;
 
     top: 100%;
     /* top: calc(100% + .2rem);  */
     left: 0;
 
-    border-radius: .5rem;
-    padding: .6rem;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
 
     --color: #242424;
     background-color: var(--color);
@@ -635,28 +625,25 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     /* background: linear-gradient(90deg, #303030, #404040); */
     /* background: linear-gradient(90deg, #303030, #393939); */
 
-
     /* box-shadow: 0 0 .5rem #111; */
     /* border: 2px solid #444; */
     /* border: 2px solid #282828; */
-
 
     /* box-shadow: 0 .5rem 1.5rem #111, 0 -.2rem 1rem #777; */
 
     /* box-shadow: 0 .5rem 1.5rem #111; */
     /* box-shadow: 0 .25rem .5rem #00000088; */
-    box-shadow: 0 .25rem .5rem #000000aa, inset 0 -1rem 1.5rem -2rem #eeeeee44;
+    box-shadow:
+        0 0.25rem 0.5rem #000000aa,
+        inset 0 -1rem 1.5rem -2rem #eeeeee44;
 
     /* box-shadow: .5rem .5rem #222; */
     /* box-shadow: 1px 1px #222, 2px 2px #222, 3px 3px #222, 4px 4px #222, 5px 5px #222, 6px 6px #222, 7px 7px #222, 8px 8px #222; */
 
     /* border: 2px solid #555; */
 
-
     /* background-color: hsl(189, 25%, 25%);
     border: 2px solid hsl(187, 12%, 80%); */
-
-
 }
 
 .statuses-container::before {
@@ -664,14 +651,14 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     pointer-events: none;
 
     bottom: 100%;
-    left: calc(.2rem * 2 + 2rem * 1.5);
+    left: calc(0.2rem * 2 + 2rem * 1.5);
 
     border-style: solid;
 
-    border-width: .5rem;
-    margin-left: -.5rem;
+    border-width: 0.5rem;
+    margin-left: -0.5rem;
 
-    border-color: transparent transparent var(--color); 
+    border-color: transparent transparent var(--color);
     /* border-color: transparent transparent #eee;  */
     width: 0;
     height: 0;
@@ -680,7 +667,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 }
 
 .statuses-container__controls {
-    padding: 0 0 .2rem 0;
+    padding: 0 0 0.2rem 0;
 
     width: 100%;
     display: flex;
@@ -696,7 +683,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: 0.4rem;
 
     max-height: calc(100vh - 10rem);
     /* max-height: 200px; */
@@ -720,11 +707,11 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 
     background-color: #555;
 
-    border-radius: .4rem;
+    border-radius: 0.4rem;
 
     /* padding: .4rem; */
     margin: 0;
-    animation: roll-in-left 400ms cubic-bezier(0,0,0,1) 1 forwards;
+    animation: roll-in-left 400ms cubic-bezier(0, 0, 0, 1) 1 forwards;
 
     /* text-wrap: nowrap;
     overflow: hidden; */
@@ -743,10 +730,10 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     justify-content: space-between;
     align-items: center;
 
-    font-size: .875rem;
-    
-    border-radius: .3rem;
-    padding: .4rem;
+    font-size: 0.875rem;
+
+    border-radius: 0.3rem;
+    padding: 0.4rem;
 
     background-color: #444;
     /* background-color: #33333366; */
@@ -781,22 +768,22 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: .2rem;
-    font-size: .75rem;
+    gap: 0.2rem;
+    font-size: 0.75rem;
 }
 .status__files__file__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: .3rem;
-    border-radius: .3rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
     background-color: #444;
-    border: .3rem solid #363636;
+    border: 0.3rem solid #363636;
     border-style: hidden hidden hidden solid;
 
-    gap: .2rem;
-    margin: 0 .2rem;
+    gap: 0.2rem;
+    margin: 0 0.2rem;
 }
 .status__files__file__container:has(.error.status__check) {
     border-color: var(--color--danger);
@@ -805,7 +792,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     border-color: var(--color--success--2);
 }
 .status__files__file__container:first-child {
-    margin-top: .2rem;
+    margin-top: 0.2rem;
     /* position: relative; */
 }
 /* .status__files__file__container:first-child::before {
@@ -820,7 +807,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     background: linear-gradient(90deg, #eeeeee22, #eeeeee22);
 } */
 .status__files__file__container:last-child {
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
 }
 
 .status__check {
@@ -836,7 +823,6 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 
 .status__files__file {
     flex-grow: 1;
-
 
     text-wrap: nowrap;
     overflow: hidden;
@@ -874,7 +860,6 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     height: 150%;
 }
 
-
 @keyframes roll-in-right {
     0% {
         translate: 100%;
@@ -900,19 +885,17 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 }
 
 @media (max-width: 768px) and (pointer: coarse) {
-
 }
 
 @media (max-width: 768px) {
-
     .manager__panel__expand-btn {
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        border-top-right-radius: .3rem;
-        border-bottom-right-radius: .3rem;
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
 
         padding: var(--top-bar-padding);
         width: 2rem;
@@ -926,7 +909,10 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 
         /* box-shadow: inset -.2rem 0 .2rem -.1rem #eeeeee22, .1rem 0 .1rem black; */
         /* box-shadow: inset -.15rem 0 .2rem -.1rem #eeeeee22, .2rem 0 .2rem #000000aa; */
-        box-shadow: inset -.15rem 0 .2rem -.15rem #eeeeee22, .1rem .1rem .1rem #00000033, .1rem -.1rem .1rem #00000033;
+        box-shadow:
+            inset -0.15rem 0 0.2rem -0.15rem #eeeeee22,
+            0.1rem 0.1rem 0.1rem #00000033,
+            0.1rem -0.1rem 0.1rem #00000033;
     }
     .manager__panel__expand-btn:focus,
     .manager__panel__expand-btn:hover {
@@ -940,9 +926,10 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
         /* box-shadow: 0 0 1rem -.8rem #eee; */
 
         /* box-shadow: 0 0 .2rem #eeeeee44, inset 0 0 .2rem black; */
-        box-shadow: inset 0 0 .2rem #eeeeee22, -.05rem 0 .2rem #000000aa;
+        box-shadow:
+            inset 0 0 0.2rem #eeeeee22,
+            -0.05rem 0 0.2rem #000000aa;
     }
-
 
     .collapsed.manager__panel {
         translate: -100%;
@@ -974,14 +961,14 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 
 .notification-container {
     position: fixed;
-    top: .3rem;
-    right: .3rem;
+    top: 0.3rem;
+    right: 0.3rem;
     z-index: 10;
 
     display: flex;
     flex-direction: column;
-    gap: .3rem;
-    
+    gap: 0.3rem;
+
     width: 400px;
     max-width: 400px;
 }
@@ -989,7 +976,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 .notification {
     color: #eee;
 
-    backdrop-filter: blur(.3rem);
+    backdrop-filter: blur(0.3rem);
     /* border: 2px solid hsl(0, 60%, 31%, 0.9); */
     /* background-color: hsl(0, 80%, 41%, 0.5); */
     background-color: hsl(0, 50%, 21%, 0.5);
@@ -997,16 +984,15 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: .3rem;
+    gap: 0.3rem;
 
     width: 100%;
-    border-radius: .6rem;
-    padding: .5rem;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
 
     font-size: 1rem;
-    animation: roll-in-right 300ms cubic-bezier(0,0,0,1) 1 forwards;
+    animation: roll-in-right 300ms cubic-bezier(0, 0, 0, 1) 1 forwards;
 }
-
 
 .notification__btn {
     height: 2rem;
@@ -1019,7 +1005,7 @@ body:has(#file-reader:focus-visible) label[for="file-reader"] {
 .notification__description {
     margin: 0;
     color: #ccc;
-    font-size: .9em;
+    font-size: 0.9em;
 }
 .notification__count {
     margin: 0;
