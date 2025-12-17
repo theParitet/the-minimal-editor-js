@@ -13,9 +13,6 @@ import { PanelFiles } from './Panel/PanelFiles';
 import { SettingsModal } from './Modal/SettingsModal';
 
 // TODO: make an actual documentation directory for these TODOs...
-// TODO: add warning type to notifications
-// TODO: refactor notifications to use JSX instead of description
-// TODO: refactor notifications to use key notification object attribute to unique denote it
 // TODO: introduce context provider for the all of the main editor operations
 
 let importedId = 0;
@@ -230,7 +227,27 @@ export default function App() {
 
                 tempSaves.push(fileObj);
 
-                setData('saves', JSON.stringify(tempSaves), 0, true);
+                setData(
+                    'saves',
+                    JSON.stringify(tempSaves),
+                    {
+                        key: `FILELOAD::FAIL::${title}`,
+                        type: 'danger',
+                        title: 'Unable to Load File',
+                        description: (
+                            <p className="notification__description">
+                                The{' '}
+                                <strong>
+                                    <code>{title}</code>
+                                </strong>{' '}
+                                file could not be loaded due to the insufficient
+                                space in the browser memory (taking up more than
+                                5MB).
+                            </p>
+                        ),
+                    },
+                    true
+                );
                 setData('last', nextId, 0, true);
                 setFileId(nextId);
 
@@ -286,53 +303,73 @@ export default function App() {
 
     function addNotification(notification) {
         if (typeof notification === 'number') {
+            let numKey = notification;
             switch (notification) {
                 case 0:
                     notification = {
                         type: 'danger',
-                        message: 'Unable to Save Changes',
+                        title: 'Unable to Save Changes',
                         description:
-                            'Browser storage exceeded (5+ MB of memory). Unable to write more data.',
+                            'Browser storage exceeded (more than 5MB of memory). Unable to write more data.',
                     };
                     break;
                 case 5:
                     notification = {
                         type: 'warning',
-                        message: 'Storage is not Persistent',
+                        title: 'Storage is not Persistent',
                         description:
                             'You are limited to the browser storage that is susceptible to erasing.',
+                    };
+                    break;
+                case 7:
+                    notification = {
+                        type: 'info',
+                        title: 'Test Info',
+                        description: (
+                            <p className="notification__description">
+                                This is a test info message.
+                            </p>
+                        ),
                     };
                     break;
                 default:
                     notification = {
                         type: 'danger',
-                        message: 'Unknown error',
-                        description:
-                            'Unknown reason. Submit an issue to Github...',
+                        title: 'Unknown Error',
+                        description: (
+                            <p className="notification__description">
+                                Unknown error. If being continuously
+                                encountered,{' '}
+                                <a
+                                    href="https://github.com/theParitet/the-minimal-editor-js/issues"
+                                    target="_blank"
+                                >
+                                    submit an issue
+                                </a>{' '}
+                                on GitHub.
+                            </p>
+                        ),
                     };
                     break;
             }
+            notification.key = `PREDEFINED::${numKey}`;
         }
         const copy = notifications.slice();
         copy.unshift(notification);
         setNotifications(copy);
     }
 
-    const handleDeleteNotification = description => {
+    const handleDeleteNotification = key => {
         const copy = notifications.slice();
-        setNotifications(
-            copy.filter(
-                notification => notification.description !== description
-            )
-        );
+        setNotifications(copy.filter(notification => notification.key !== key));
     };
 
-    function setData(key, data, failMessage = 0, throwError = false) {
+    function setData(key, data, notification = 0, throwError = false) {
         try {
             localStorage.setItem(key, data);
             return true;
         } catch (e) {
-            addNotification(e.name === 'QuotaExceededError' ? failMessage : 0);
+            addNotification(notification);
             if (throwError) {
                 throw new Error(e.name);
             }

@@ -1,21 +1,19 @@
 import cross from '../assets/pictures/cross.svg';
 
-// notification.description is used as a unique identifier
 export function Notifications({ notifications, handleDeleteNotification }) {
-    let repeat = [];
+    const repeat = [];
+    const keys = [];
 
     notifications.forEach(ntf => {
-        const descriptions = repeat.map(r => r.description);
-        if (!descriptions.includes(ntf.description)) {
+        if (!keys.includes(ntf.key)) {
+            keys.push(ntf.key);
             repeat.push({
-                message: ntf.message,
-                description: ntf.description,
+                ...ntf,
                 count: 1,
             });
         } else {
             repeat.some(record => {
-                let { description } = record;
-                if (description === ntf.description) {
+                if (record.key === ntf.key) {
                     record.count++;
                     return true;
                 }
@@ -24,25 +22,30 @@ export function Notifications({ notifications, handleDeleteNotification }) {
         }
     });
 
+    console.log(notifications);
     const notificationsJSX = repeat.map(record => {
         return (
-            <div className="notification" key={record.description}>
+            <div className={'notification ' + record.type} key={record.key}>
                 <div>
                     <h1 className="notification__title">
-                        {record.message}{' '}
+                        {record.title}{' '}
                         {record.count !== 1 && (
                             <span className="notification__count">
                                 {record.count}x
                             </span>
                         )}
                     </h1>
-                    <p className="notification__description">
-                        {record.description}
-                    </p>
+                    {typeof record === 'string' ? (
+                        <p className="notification__description">
+                            {record.description}
+                        </p>
+                    ) : (
+                        record.description
+                    )}
                 </div>
                 <button
                     className="btn-img btn-img--default notification__btn"
-                    onClick={() => handleDeleteNotification(record.description)}
+                    onClick={() => handleDeleteNotification(record.key)}
                 >
                     <img src={cross} alt="" />
                 </button>
