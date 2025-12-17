@@ -538,7 +538,9 @@ body:has(.record:hover) .record:hover > .record__trash {
     display: none;
     position: absolute;
     right: var(--record-padding);
-    border-radius: var(--border-radius) !important;
+    border-radius: calc(
+        var(--border-radius) - var(--record-padding)
+    ) !important;
 }
 
 .record__title {
