@@ -354,9 +354,7 @@ export default function App() {
             }
             notification.key = `PREDEFINED::${numKey}`;
         }
-        const copy = notifications.slice();
-        copy.unshift(notification);
-        setNotifications(copy);
+        setNotifications(prev => [notification, ...prev]);
     }
 
     const handleDeleteNotification = key => {
