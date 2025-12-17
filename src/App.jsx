@@ -50,7 +50,7 @@ Other features would be added to enhance this editor further.
 
 [more]
 If you wish to learn more, you can find additional information on GitHub:
-https://github.com/theParitet/minimal-editor
+https://github.com/theParitet/the-minimal-editor-js
 (direct hyperlink link can be found in Settings (gear icon) > About)`;
 const readme = {
     id: -1,
@@ -307,7 +307,7 @@ export default function App() {
                 default:
                     notification = {
                         type: 'danger',
-                        message: 'Unable to Save Changes',
+                        message: 'Unknown error',
                         description:
                             'Unknown reason. Submit an issue to Github...',
                     };
@@ -333,10 +333,6 @@ export default function App() {
             localStorage.setItem(key, data);
             return true;
         } catch (e) {
-            console.log(
-                'PASSED IN TOT HE SHOW FUNCION',
-                e.name === 'QuotaExceededError' ? failMessage : 1
-            );
             addNotification(e.name === 'QuotaExceededError' ? failMessage : 1);
             if (throwError) {
                 throw new Error(e.name);
@@ -408,8 +404,14 @@ export default function App() {
                         handleNewFile={handleNewFile}
                         handleImport={handleImport}
                         handleStatusesDelete={handleStatusesDelete}
-                        handleZen={() => setZen(!zen)}
-                        handleSettings={() => setInert(!inert)}
+                        handleZen={() => {
+                            setZen(!zen);
+                            setIsPanelCollapsed(true);
+                        }}
+                        handleSettings={() => {
+                            setInert(!inert);
+                            setIsPanelCollapsed(true);
+                        }}
                     />
                     <PanelFiles
                         id={fileId}

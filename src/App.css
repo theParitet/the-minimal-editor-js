@@ -47,6 +47,9 @@ body {
     scrollbar-width: thin;
 
     background-color: #242424;
+
+    min-height: 100dvh;
+    max-height: 100dvh;
 }
 
 #root {
@@ -55,6 +58,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
+    max-height: 100dvh;
 }
 
 a {
@@ -336,14 +340,12 @@ body:has(#manager.zen) .header {
     display: none;
 }
 
-/* TODO: Check size issues in SAFARI for this element */
 .manager__editor {
     display: flex;
     flex-direction: column;
     flex: 1 1 0;
 }
 
-/* TODO: CHECK COMPATIBILITY WITH SAFARI AND MOBILE for this element */
 .editor-container {
     display: contents;
 }
