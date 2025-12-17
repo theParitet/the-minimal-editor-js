@@ -1,14 +1,23 @@
 # The Minimal Editor
 
 <p align="center">
-    <img  src="https://raw.githubusercontent.com/theParitet/the-minimal-editor/e5d81fede90374389b33e57d884e00a81572610e/public/logo2.svg" width="100" alt="the minimal editor logo" />
+    <img  src="public/thumbnail-v2.png" width="480" alt="the minimal editor thumbnail" />
 </p>
 
 The Minimal Editor is a web plain text editor.
 
+> [Live demo](https://theparitet.github.io/the-minimal-editor-js/)
+
+## Features
+
+- Notes with title and content sections
+- Import and export workflows with status feedback
+- Distraction-free Zen mode
+- Configurable appearance
+
 ## Tech
 
-- React(19)
+- React (19)
 - JavaScript (planned migration to TypeScript)
 - Vite
 
