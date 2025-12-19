@@ -129,7 +129,12 @@ export function SettingsContent({
                         >
                             <button className="record__file">
                                 <img src={file} alt="File icon" />
-                                <p className={'record__title'}>
+                                <p
+                                    className={'record__title'}
+                                    style={{
+                                        fontSize: `${0.7 + preferences.space / 1.5}rem`,
+                                    }}
+                                >
                                     Lorem ipsum dolor
                                 </p>
                             </button>
@@ -148,7 +153,12 @@ export function SettingsContent({
                         >
                             <button className="record__file">
                                 <img src={file} alt="File icon" />
-                                <p className={'record__title'}>
+                                <p
+                                    className={'record__title'}
+                                    style={{
+                                        fontSize: `${0.7 + preferences.space / 1.5}rem`,
+                                    }}
+                                >
                                     Lorem ipsum dolor
                                 </p>
                             </button>
