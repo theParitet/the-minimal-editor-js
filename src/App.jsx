@@ -66,7 +66,6 @@ if (!pref) {
 }
 
 let id;
-console.log('LAST ITEM:', localStorage.getItem('last'));
 const lastItem = parseInt(localStorage.getItem('last'));
 
 if (lastItem || lastItem === 0) {
@@ -90,14 +89,8 @@ export default function App() {
 
     const currentFile = findById(saves, fileId);
 
-    console.log('>>>>>>>>>>>>>>>>>>RERENDER');
-    console.log('current id:', fileId);
-    console.log('current file:', currentFile);
-    console.log('saves:', saves);
-
     function getNextId(givenSaves = saves) {
         let lastId = 0;
-        console.log(givenSaves);
 
         const ids = givenSaves.map(save => save.id);
         ids.forEach(id => {

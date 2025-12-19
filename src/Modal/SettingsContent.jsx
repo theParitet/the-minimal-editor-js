@@ -159,9 +159,6 @@ export function SettingsContent({
                     </div>
                 </>
             );
-        // inset: true,
-        // space: '.5rem',
-        // smoothness: '.5rem',
         case 'Storage':
             return (
                 <>
@@ -174,10 +171,11 @@ export function SettingsContent({
                     <p>
                         This is a project of a{' '}
                         <strong>client-side minimal editor</strong> for plain
-                        text right in your next browser tab.
+                        text right in your browser.
                     </p>
                     <p>
-                        You can check out the source code of the project at the{' '}
+                        You can check out the source code and contribute to the
+                        project at the{' '}
                         <a
                             href="https://github.com/theParitet/the-minimal-editor-js"
                             target="_blank"

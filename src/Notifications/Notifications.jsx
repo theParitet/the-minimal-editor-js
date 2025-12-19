@@ -22,7 +22,6 @@ export function Notifications({ notifications, handleDeleteNotification }) {
         }
     });
 
-    console.log(notifications);
     const notificationsJSX = repeat.map(record => {
         return (
             <div className={'notification ' + record.type} key={record.key}>
