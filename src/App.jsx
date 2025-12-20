@@ -18,7 +18,10 @@ let importedId = 0;
 const version = 'v0.1.1';
 
 const readmeTitle = `⚙️ Your Minimal Editor ${version}`;
-const readmeContent = `[info]
+const readmeContent = `[IMPORTANT]
+This is a legacy minimal editor implementation.
+
+[info]
 This is a web-based plain text editor right in your browser. No links, no formatting, no images, no distraction.
 
 This is just the _first_ implementation of a minimal editor.
@@ -46,7 +49,8 @@ const readme = {
 };
 
 let data = JSON.parse(localStorage.getItem('saves'));
-if (!data) {
+let firstTime = !data;
+if (firstTime) {
     data = [readme];
 }
 
@@ -82,6 +86,11 @@ export default function App() {
     const contentRef = useRef(null);
 
     const currentFile = findById(saves, fileId);
+
+    if (firstTime) {
+        addNotification(6);
+        firstTime = false;
+    }
 
     function getNextId(givenSaves = saves) {
         let lastId = 0;
@@ -160,9 +169,11 @@ export default function App() {
             copy.push(readme);
             setSaves(copy);
             setData('saves', JSON.stringify(copy));
+            addNotification(6);
         }
         setFileId(-1);
         setData('last', -1);
+        addNotification(6);
     };
 
     function changeFile(id) {
@@ -298,6 +309,35 @@ export default function App() {
                         title: 'Storage is not Persistent',
                         description:
                             'You are limited to the browser storage that is susceptible to erasing.',
+                    };
+                    break;
+                case 6:
+                    notification = {
+                        type: 'warning',
+                        title: 'Legacy Version',
+                        description: (
+                            <>
+                                <p className="notification__description">
+                                    This is a{' '}
+                                    <strong style={{ color: '#ff5566' }}>
+                                        legacy
+                                    </strong>{' '}
+                                    implementation of the Minimal Editor which
+                                    is no longer maintained.
+                                </p>
+                                <p className="notification__description">
+                                    The{' '}
+                                    <strong style={{ color: '#66ee55' }}>
+                                        actively maintained and up-to-date
+                                    </strong>{' '}
+                                    version can be found{' '}
+                                    <a href="https://theparitet.github.io/the-minimal-editor/">
+                                        here
+                                    </a>
+                                    .
+                                </p>
+                            </>
+                        ),
                     };
                     break;
                 case 7:

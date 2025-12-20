@@ -1,5 +1,11 @@
 # The Minimal Editor
 
+> [!IMPORTANT]
+>
+> This repository contains a legacy JavaScript implementation and is no longer maintained.
+>
+> The actively maintained and up-to-date TypeScript version is available [here](https://github.com/theParitet/the-minimal-editor).
+
 <p align="center">
     <img  src="public/thumbnail-v2.png" width="480" alt="the minimal editor thumbnail" />
 </p>

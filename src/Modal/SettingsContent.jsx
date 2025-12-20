@@ -173,11 +173,37 @@ export function SettingsContent({
             return (
                 <>
                     <p className="placeholder">Coming soon...</p>
+                    <p className="placeholder">
+                        Perhaps, would be available in the{' '}
+                        <a href="https://theparitet.github.io/the-minimal-editor/">
+                            newer version
+                        </a>
+                        .
+                    </p>
                 </>
             );
         case 'About':
             return (
                 <>
+                    <h2>Important Note</h2>
+                    <p>
+                        This is a{' '}
+                        <strong style={{ color: '#ff5566' }}>legacy</strong>{' '}
+                        implementation of the Minimal Editor which is no longer
+                        maintained.
+                    </p>
+                    <p>
+                        The{' '}
+                        <strong style={{ color: '#66ee55' }}>
+                            actively maintained and up-to-date
+                        </strong>{' '}
+                        version can be found{' '}
+                        <a href="https://theparitet.github.io/the-minimal-editor/">
+                            here
+                        </a>
+                        .
+                    </p>
+                    <h2>Info</h2>
                     <p>
                         This is a project of a{' '}
                         <strong>client-side minimal editor</strong> for plain
