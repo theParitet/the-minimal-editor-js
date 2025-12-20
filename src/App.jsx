@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 
 import expand from './assets/pictures/expand.svg';
 import zenIcon from './assets/pictures/zen.svg';
+import githubIcon from './assets/pictures/github-mark-white.svg';
 
 import './App.css';
 import { Notifications } from './Notifications/Notifications';
@@ -372,7 +373,7 @@ export default function App() {
                         right: '.3rem',
                     }}
                 >
-                    <img width={24} src="public/github-mark-white.svg" />
+                    <img width={24} src={githubIcon} />
                 </a>
             </header>
 
